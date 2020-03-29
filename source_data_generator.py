@@ -130,7 +130,7 @@ if __name__ == '__main__':
     # Making up random email providers
     EMAIL_PROVIDERS = ('funmail.com', 'goodmail.com', 'testmail.com')
     load_values(ARGS.names_file, ARGS.last_names_file, names_list, last_names_list)
-    create_user_accounts(names_list, last_names_list, 100, EMAIL_PROVIDERS, ARGS.accounts_file,
+    create_user_accounts(names_list, last_names_list, int(ARGS.number_of_accounts), EMAIL_PROVIDERS, ARGS.accounts_file,
                          user_dict)
 
     # Now create status entries
@@ -139,4 +139,4 @@ if __name__ == '__main__':
     adjectives_list = []
     phrase_dict = {}
     create_phrases(ARGS.nouns_file, ARGS.verbs_file, ARGS.adjectives_file, nouns_list, verbs_list,
-                   adjectives_list, user_dict, phrase_dict, ARGS.status_file, 1000)
+                   adjectives_list, user_dict, phrase_dict, ARGS.status_file, int(ARGS.number_of_status))
